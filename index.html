@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BUDDY — 2인 부동산 예산설계</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f172a'/%3E%3Cpath d='M32 12 15 31h6v19h11V30h0v20h11V31h6z' fill='%232f6fed'/%3E%3Cpath d='M32 12v18h17v-0L32 12z' fill='%23f59e0b'/%3E%3Crect x='31' y='12' width='2' height='38' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAG0UlEQVR42u3dP4gcVRwH8OkVd+O/Ab0zS/yTZEJwqxDEwBobRQiXCIIp4hZaBEGLqwJCFok2YhnssoW1nFYWCtdJ0niNhaWVICIXCy1sVibMyZnkcnv7Z97Me5+Bb2Pnm99n5733e++SZQ14OnnR6+TFWicvRp28GHfyYrOTF1udvJhIFNmq3um4esflu+5lqT5VwQ87ebHRyYttBZJstqsaGEYPopMX3ep/1C+7POhLUdZIN7Zf+7GXKwfMuNVfhU5eDKp5n5cp86SsoYFffPFFaPoXoVrhW9TKMhfNoyYWft/iVmpeLPebUvxDv/oS6GswDF385voSfG0Qak/fDo80aaeoW2fxm+9LE9cFXcUvECh+gWDxAMz5pTVrArs9Yndogfv8BlTamOEiOryaXNLmZll/HgAWvdL6RfE8B9sMoMSQ0UGLv2fqI5FNhXp2fcSu0JQ3uQyYxJiBhpdokO0z9zdQEnN65v5iLbDHYTcDJCmk68iDOCKh6yu6wxa/kvpi2PRHkp4GVX+h16BIStnYDcC5H0nufJD5v1gHVP9ah8GQFLPm3L+kfU/A8YdwufzBlTsxFgGPRTj9Ga74dx4IAp4O1QGuP2+cf2dy9/Py2fPGJkRH2CDUm7LQb9/+8x4A5X+DoP4AUGMeO3J2cv2b3yZ7Pb//8OnkxNEXjBUA8eXQyqnJ8Us3J198+/eeAP758ZPJrWvdyerhY8YMgPiK/8UP/9gXwF83HoIAgLjy/Jtf3yn+aQGU+Wr9cWMHQPvz7Lkv/yv+gwAoc+P9J40hAO3N4Vc/+1/xHxRAmY8vPmUsAWhfnj69fk/xzwKgzHuvP2NMAWh/8c8KAAIAWpMnjp6bnLz8y8IB/Hr94clL/eeMMQDtLf55AEAAQOP3+k+8+9MDi39eAGV+/vwRPQIAmtvoWjYAjTIAGpdpi39RAMp899Gjxh6A5jW66gKgUQZA64p/0QAgAKCRe/11AtAjAKA1xb8sABAAUFvykxdnLv5lAijz2ukj3hEAYRtdIQFolAGw1OuM8xb/sgHsIHCtEoBgja7QADTKAGhs8dcFAAIAgu71NwGAa5UANK746wagUQbAQq8zthGAa5UA1NroaiIAjTIAGlH8IQGUeeuVnncMwHIbXU0GoFEGQNDiDw0AAgDmus4YAwDXKgFYaqOrDQA0ygCY6TpjTAB2EACg0ZUsAI2yhAGEKP4mAkgdQZIAlr3X3zYAKTfKMsUPQMoIstT2+kMWf9MBpHitMkup+OtodLUdQGqNsiQALOo6YwoAUrtWGT2AuhtdMQBIqVGWKX4AUkYQNYDd/zojAHoESQEI1eiKDUDsCKIEsKzrjKkCiPlaZabRBUDKjbJM8QOQMoJMowuAlBtlmeIHIGUEWQx7/XVdZwQgvmuVmUYXACk3yloN4Ojb37eq+GMDEMO1ykyjC4CUG2WZ4gcgZQStXwSvnrkKQKCsX1ixCE7tz5oAENefVWk9AFOgsAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACalOOXbgIQKLeudQEIndUzVwEIlPULKwD4CqQJIIZf/2gAHFo51RoEMQAoi3/18DEAmjgdajqENgMoCz+GaU+0AEQAEAFAZHoAWwZCEs1WCWDTQEii2SwBjA2EJJpxCWBkICTRjEoAawZCEs1aCaBnICTR9LLy6eTFtsGQxLKd7TydvNgwIJJYNnYDGBoQSSzD3QCsAyTN+f8uBDrCkk4H+O7HNEiSnP7sAtA1MJJIutn9HsciJInjD3s9FsOS3OL3PgicDpV4T3/u93TyYmCgJNIMsmkeawFJau6/x1rA+SCJ5tzPvnP/+yBwT0DiOfc/y6M7LFF2fQ8AoG8qJC2f+vSzeR5HJCSqIw8zIrArJPHu+kyJQINM4ml4zQCga1EsbVj07nnYDQJR/BCI4l8IAmsCacycv7bitzskUe/2zNgn0CyTEE2uYdaEp+oYWxdInfP9fta0pzpA52sgy/zVH2VNfqqj1NYGsvC5/oGPNAeGMLBTJAva4RlkbX18ESSJX/wpewdDi2XZZ3E7DLKnH+CrMKz+KrVFc9qL2o2qFnpZqk8FYq3aRRpX8z5firh+2Terdzuq3nUjCv5ferWe5qZnceUAAAAASUVORK5CYII=">
+<style>
+  :root{
+    --bg:#f4f5f7; --card:#fff; --text:#1a1d23; --sub:#6b7280; --line:#e5e7eb;
+    --a:#2f6fed; --b:#f59e0b; --ok:#16a34a; --warn:#d97706; --bad:#dc2626;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#0f172a; --card:#1a2236; --text:#e6e9f0; --sub:#9aa5b8; --line:#2a3347; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.5}
+  .wrap{max-width:480px;margin:0 auto;padding:16px 16px 48px}
+  header{display:flex;align-items:center;gap:10px;padding:8px 0 16px}
+  header svg{width:34px;height:34px;flex:none}
+  header h1{font-size:19px;margin:0}
+  header p{margin:0;font-size:12px;color:var(--sub)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px}
+  .card h2{font-size:15px;margin:0 0 12px;display:flex;align-items:center;gap:6px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+  .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px}
+  label{display:block;font-size:12px;color:var(--sub);margin-bottom:4px}
+  input[type=number],input[type=text],select{
+    width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:8px;
+    background:var(--bg);color:var(--text);font-size:15px;
+  }
+  input[type=range]{width:100%}
+  .unit{font-size:11px;color:var(--sub)}
+  .person-a{color:var(--a)}
+  .person-b{color:var(--b)}
+  .out{display:flex;justify-content:space-between;align-items:baseline;padding:6px 0;border-bottom:1px dashed var(--line);font-size:14px}
+  .out:last-child{border-bottom:none}
+  .out b{font-size:15px}
+  .big{font-size:22px;font-weight:700}
+  .note{font-size:12px;color:var(--sub);margin-top:8px}
+  .warn{background:#fef3c7;color:#92400e;border-radius:8px;padding:8px 10px;font-size:12.5px;margin-top:8px}
+  .bad{background:#fee2e2;color:#991b1b;border-radius:8px;padding:8px 10px;font-size:12.5px;margin-top:8px}
+  .ok{background:#dcfce7;color:#166534;border-radius:8px;padding:8px 10px;font-size:12.5px;margin-top:8px}
+  @media (prefers-color-scheme: dark){
+    .warn{background:#3f2d0a;color:#fcd34d}
+    .bad{background:#3f1515;color:#fca5a5}
+    .ok{background:#0f3a22;color:#86efac}
+  }
+  button{border:none;border-radius:8px;padding:8px 12px;font-size:13px;background:var(--a);color:#fff;cursor:pointer}
+  .ghost{background:var(--bg);color:var(--text);border:1px solid var(--line)}
+  .equitybar{display:flex;height:28px;border-radius:8px;overflow:hidden;margin:8px 0}
+  .equitybar div:first-child{background:var(--a)}
+  .equitybar div:last-child{background:var(--b)}
+  .equitybar span{color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;width:100%}
+  .eqPresets{display:grid;grid-template-columns:1fr 1fr 70px;gap:6px;margin-bottom:4px}
+  .eqPresets input{text-align:center}
+  .loanRow{border:1px solid var(--line);border-radius:10px;padding:8px;margin-bottom:8px}
+  .loanRowTop{display:flex;gap:6px;margin-bottom:6px}
+  .loanRowTop select{flex:1}
+  .loanRowTop button{background:var(--bad);flex:none;padding:8px 10px}
+  .row4{display:grid;grid-template-columns:1.3fr .8fr .8fr 1.1fr;gap:6px}
+  .row4 input,.row4 select{font-size:13px;padding:7px 6px}
+  .llabel{display:block;font-size:10px;color:var(--sub);margin-bottom:2px;white-space:nowrap}
+  .moneyHint{font-size:12px;font-weight:700;color:#39ff14;text-shadow:0 0 1px rgba(0,0,0,.35);margin-top:3px;min-height:14px}
+  .addLoan{width:100%;margin-top:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <svg viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0f172a"/><path d="M32 12 15 31h6v19h11V30h11v20h0V31h6z" fill="#2f6fed"/><path d="M32 12v18h17v1L32 12z" fill="#f59e0b"/><rect x="31" y="12" width="2" height="38" fill="#fff"/></svg>
+    <div>
+      <h1>BUDDY</h1>
+      <p>2인 부동산 예산설계 — Budget Design for Duo</p>
+    </div>
+  </header>
+
+  <div class="card">
+    <h2>👥 이름</h2>
+    <div class="row">
+      <div><label>나</label><input type="text" id="nameMy" value="나"></div>
+      <div><label>파트너</label><input type="text" id="namePartner" value="파트너"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 class="person-a" id="lblMyCard">🙋 나의 자금</h2>
+    <div><label>현금 <span class="unit">(만원)</span></label><input type="number" id="myCash" class="moneyInput" value="10000" min="0" step="100"><div class="moneyHint"></div></div>
+    <div class="note" style="margin:10px 0 6px">대출 (종류별로 추가·삭제 가능)</div>
+    <div id="myLoanList" class="loanList" data-person="my"></div>
+    <button type="button" class="addLoan ghost" data-person="my">+ 대출 추가</button>
+    <div id="myLoanTotal" class="note"></div>
+  </div>
+
+  <div class="card">
+    <h2 class="person-b" id="lblPartnerCard">🙋 파트너의 자금</h2>
+    <div><label>현금 <span class="unit">(만원)</span></label><input type="number" id="partnerCash" class="moneyInput" value="10000" min="0" step="100"><div class="moneyHint"></div></div>
+    <div class="note" style="margin:10px 0 6px">대출 (종류별로 추가·삭제 가능)</div>
+    <div id="partnerLoanList" class="loanList" data-person="partner"></div>
+    <button type="button" class="addLoan ghost" data-person="partner">+ 대출 추가</button>
+    <div id="partnerLoanTotal" class="note"></div>
+  </div>
+
+  <div class="card">
+    <h2>🏠 매매가 · 지급 단계</h2>
+    <div><label>매매가 <span class="unit">(만원)</span></label><input type="number" id="price" class="moneyInput" value="50000" min="0" step="100"><div class="moneyHint"></div></div>
+    <div class="row" style="margin-top:10px">
+      <div><label>계약금 비율 <span class="unit">(%)</span></label><input type="number" id="dpPct" value="10" min="0" max="100" step="1"></div>
+      <div><label>중도금 비율 <span class="unit">(%, 없으면 0)</span></label><input type="number" id="midPct" value="0" min="0" max="100" step="1"></div>
+    </div>
+    <div id="stageOut"></div>
+    <div id="stageWarn"></div>
+  </div>
+
+  <div class="card">
+    <h2>📐 지분 비율 (공동명의, 혼인 전제)</h2>
+    <div id="equityInput" class="note" style="margin-bottom:8px"></div>
+    <div class="eqPresets">
+      <button type="button" id="eq5050" class="ghost">50 : 50</button>
+      <button type="button" id="eqAuto" class="ghost">투입액 비율로</button>
+      <input type="number" id="equityNum" min="0" max="100" value="50">
+    </div>
+    <input type="range" id="equityPct" min="0" max="100" value="50">
+    <div class="equitybar">
+      <div id="eqA" style="width:50%"><span id="eqALabel">나 50%</span></div>
+      <div id="eqB" style="width:50%"><span id="eqBLabel">파트너 50%</span></div>
+    </div>
+    <div id="equityWarn"></div>
+  </div>
+
+  <div class="card">
+    <h2>📊 월 소득 대비 상환 비율</h2>
+    <div class="row">
+      <div><label class="person-a" id="lblMyIncome">나 월 소득 <span class="unit">(만원)</span></label><input type="number" id="myIncome" class="moneyInput" value="400" min="0" step="10"><div class="moneyHint"></div></div>
+      <div><label class="person-b" id="lblPartnerIncome">파트너 월 소득 <span class="unit">(만원)</span></label><input type="number" id="partnerIncome" class="moneyInput" value="350" min="0" step="10"><div class="moneyHint"></div></div>
+    </div>
+    <div id="loanOut"></div>
+    <div id="incomeOut"></div>
+  </div>
+
+  <div class="card">
+    <h2>🛟 비상금</h2>
+    <div><label>여유자금 (만원)</label><input type="number" id="emergency" class="moneyInput" value="1000" min="0" step="50"><div class="moneyHint"></div></div>
+    <div id="emergencyOut"></div>
+  </div>
+</div>
+
+<script src="calc.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const num = id => Number($(id).value) || 0;
+
+const LOAN_TYPES = ['주택담보대출', '전세자금대출', '신용대출', '사내대출', '정책대출(보금자리론·디딤돌)', '가족 차용', '기타'];
+const myLoans = []; // 담보 1순위 제약 등으로 사람마다 대출이 0~여러 개일 수 있음
+const partnerLoans = [{ type: '사내대출', amount: 20000, rate: 3.0, years: 10, method: 'annuity' }];
+
+function loanRowHtml(l, i){
+  return `
+  <div class="loanRow">
+    <div class="loanRowTop">
+      <select data-idx="${i}" data-field="type">
+        ${LOAN_TYPES.map(t => `<option ${t === l.type ? 'selected' : ''}>${t}</option>`).join('')}
+      </select>
+      <button type="button" class="delLoan" data-idx="${i}">✕</button>
+    </div>
+    <div class="row4">
+      <div><span class="llabel">금액(만원)</span><input type="number" class="moneyInput" data-idx="${i}" data-field="amount" value="${l.amount}" min="0" step="100"><div class="moneyHint"></div></div>
+      <div><span class="llabel">금리(%)</span><input type="number" data-idx="${i}" data-field="rate" value="${l.rate}" min="0" step="0.1"></div>
+      <div><span class="llabel">기간(년)</span><input type="number" data-idx="${i}" data-field="years" value="${l.years}" min="1" step="1"></div>
+      <div><span class="llabel">상환방식</span><select data-idx="${i}" data-field="method">
+        <option value="annuity" ${l.method === 'annuity' ? 'selected' : ''}>원리금균등</option>
+        <option value="interest" ${l.method === 'interest' ? 'selected' : ''}>이자만(만기일시)</option>
+      </select></div>
+    </div>
+  </div>`;
+}
+function renderLoans(person){
+  const arr = person === 'my' ? myLoans : partnerLoans;
+  $(person + 'LoanList').innerHTML = arr.map((l, i) => loanRowHtml(l, i)).join('') || '<div class="note">대출 없음</div>';
+}
+renderLoans('my');
+renderLoans('partner');
+
+// 기본 지분은 50:50이 아니라 실제 투입액(현금+대출) 비율로 시작
+(function initEquity(){
+  const totalIn = num('myCash') + loanTotal(myLoans) + num('partnerCash') + loanTotal(partnerLoans);
+  const myIn = num('myCash') + loanTotal(myLoans);
+  const v = totalIn > 0 ? Math.round(myIn / totalIn * 100) : 50;
+  $('equityPct').value = v; $('equityNum').value = v;
+})();
+
+function loanTotal(arr){ return arr.reduce((s, l) => s + l.amount, 0); }
+function loanMonthly(arr){ return arr.reduce((s, l) => s + monthlyPayment(l.amount, l.rate, l.years, l.method), 0); }
+
+function updateMoneyHints(){
+  document.querySelectorAll('.moneyInput').forEach(inp => {
+    const hint = inp.nextElementSibling;
+    if (hint && hint.classList.contains('moneyHint')) hint.textContent = won(Number(inp.value) || 0);
+  });
+}
+
+function recalc(){
+  updateMoneyHints();
+  const nameMy = $('nameMy').value || '나', nameP = $('namePartner').value || '파트너';
+  $('lblMyCard').textContent = `🙋 ${nameMy}의 자금`;
+  $('lblPartnerCard').textContent = `🙋 ${nameP}의 자금`;
+  $('lblMyIncome').childNodes[0].textContent = nameMy + ' 월 소득 ';
+  $('lblPartnerIncome').childNodes[0].textContent = nameP + ' 월 소득 ';
+
+  const myCash = num('myCash'), pCash = num('partnerCash');
+  const myLoanSum = loanTotal(myLoans), pLoanSum = loanTotal(partnerLoans);
+  const totalCash = myCash + pCash, totalLoan = myLoanSum + pLoanSum;
+  $('myLoanTotal').textContent = `대출 합계 ${won(myLoanSum)} · 투입액(현금+대출) ${won(myCash + myLoanSum)}`;
+  $('partnerLoanTotal').textContent = `대출 합계 ${won(pLoanSum)} · 투입액(현금+대출) ${won(pCash + pLoanSum)}`;
+
+  const price = num('price'), dpPct = num('dpPct'), midPct = num('midPct');
+
+  // 단계별 필요 자금
+  const dp = price * dpPct / 100;
+  const mid = price * midPct / 100;
+  const balance = price - dp - mid;
+  const beforeLoan = dp + mid; // 대출은 보통 잔금 때 실행됨 → 그 전엔 현금만
+  $('stageOut').innerHTML = `
+    <div class="out"><span>계약금 (${dpPct}%)</span><b>${won(dp)}</b></div>
+    ${midPct > 0 ? `<div class="out"><span>중도금 (${midPct}%)</span><b>${won(mid)}</b></div>` : ''}
+    <div class="out"><span>잔금</span><b>${won(balance)}</b></div>`;
+
+  let warnHtml = '';
+  if (totalLoan > price){
+    warnHtml = `<div class="bad">⚠️ 대출 합계(${won(totalLoan)})가 매매가(${won(price)})보다 커요. 대출은 보통 집값의 50~80%까지만 나와요 — 금액을 다시 확인해주세요.</div>`;
+  } else if (beforeLoan > totalCash){
+    warnHtml = `<div class="bad">⚠️ 계약금${midPct > 0 ? '+중도금' : ''} 시점엔 대출이 아직 안 나와 현금으로만 내야 하는데, 현금(${won(totalCash)})이 ${won(beforeLoan - totalCash)} 부족해요.</div>`;
+  } else {
+    const leftoverCash = totalCash - beforeLoan;
+    const balanceFunding = totalLoan + leftoverCash;
+    warnHtml = balanceFunding < balance
+      ? `<div class="bad">⚠️ 잔금 때 대출+남은 현금(${won(balanceFunding)})으로도 ${won(balance - balanceFunding)}이 부족해요.</div>`
+      : `<div class="ok">✅ 잔금까지 자금이 충분해요 (여유 ${won(balanceFunding - balance)}).</div>`;
+  }
+  $('stageWarn').innerHTML = warnHtml;
+
+  // 지분 비율 (현금+대출 투입액 기준)
+  const eq = num('equityPct');
+  $('eqA').style.width = eq + '%';
+  $('eqB').style.width = (100 - eq) + '%';
+  $('eqALabel').textContent = `${nameMy} ${eq}%`;
+  $('eqBLabel').textContent = `${nameP} ${100 - eq}%`;
+
+  const totalIn = totalCash + totalLoan;
+  const suggested = totalIn > 0 ? Math.round((myCash + myLoanSum) / totalIn * 100) : 50;
+  $('equityInput').textContent = `${nameMy} 투입액 ${won(myCash + myLoanSum)} : ${nameP} 투입액 ${won(pCash + pLoanSum)} → 투입액 비율 ${suggested}:${100 - suggested}`;
+  // 혼인 전제: 배우자 간 증여재산공제(상증세법 53조, 10년간 6억원) 기준으로만 판단
+  const giftGap = Math.abs(eq - suggested) / 100 * price; // 지분-투입액 차이만큼의 집값 = 사실상 증여로 보는 금액
+  const SPOUSE_EXEMPT = 60000; // 배우자 증여재산공제: 10년간 6억원
+  if (Math.abs(eq - suggested) <= 5){
+    $('equityWarn').innerHTML = '';
+  } else if (giftGap <= SPOUSE_EXEMPT){
+    $('equityWarn').innerHTML = `<div class="note">💡 지분이 투입액 비율과 달라서 차이만큼(${won(giftGap)})은 사실상 증여예요. 배우자 간은 10년간 6억원까지 증여재산공제가 있어서 세금은 안 붙지만, 한도 안이어도 증여세 신고는 해두는 게 나중에 자금출처 소명에 안전해요.</div>`;
+  } else {
+    $('equityWarn').innerHTML = `<div class="warn">⚠️ 지분-투입액 차이(${won(giftGap)})가 배우자 증여재산공제(10년 6억원)를 넘어요. 넘는 만큼(${won(giftGap - SPOUSE_EXEMPT)})엔 증여세가 과세될 수 있어요 (세무 상담 권장).</div>`;
+  }
+
+  // 대출 상환
+  const myM = loanMonthly(myLoans), pM = loanMonthly(partnerLoans);
+  $('loanOut').innerHTML = `
+    <div class="out"><span>${nameMy} 월 상환</span><b>${won(myM)}</b></div>
+    <div class="out"><span>${nameP} 월 상환</span><b>${won(pM)}</b></div>
+    <div class="out"><span>합계</span><b class="big">${won(myM + pM)}</b></div>`;
+
+  // 소득 대비 비율
+  const myIncome = num('myIncome'), pIncome = num('partnerIncome');
+  const myRatio = myIncome > 0 ? myM / myIncome * 100 : (myM > 0 ? 999 : 0);
+  const pRatio = pIncome > 0 ? pM / pIncome * 100 : (pM > 0 ? 999 : 0);
+  const totalRatio = (myIncome + pIncome) > 0 ? (myM + pM) / (myIncome + pIncome) * 100 : 0;
+  const cls = r => r >= 40 ? 'bad' : r >= 30 ? 'warn' : 'ok';
+  $('incomeOut').innerHTML = `
+    <div class="out"><span>${nameMy}</span><b>${myRatio.toFixed(0)}%</b></div>
+    <div class="out"><span>${nameP}</span><b>${pRatio.toFixed(0)}%</b></div>
+    <div class="out"><span>합산</span><b class="big">${totalRatio.toFixed(0)}%</b></div>
+    <div class="${cls(totalRatio)}">${totalRatio >= 40 ? '⚠️ 소득의 40% 이상을 대출 갚는 데 써요. 부담이 큰 편이에요.' : totalRatio >= 30 ? '💡 소득의 30~40%대예요. 여유를 더 보는 게 좋아요.' : '✅ 소득 대비 상환 부담이 안전한 편이에요.'}</div>`;
+
+  // 비상금
+  const emergency = num('emergency');
+  const totalMonthly = myM + pM;
+  const months = totalMonthly > 0 ? emergency / totalMonthly : null;
+  $('emergencyOut').innerHTML = months === null
+    ? `<div class="note">월 상환액이 0이라 개월 수를 계산할 수 없어요.</div>`
+    : `<div class="out"><span>월 상환액 몇 달 치</span><b class="big">${months.toFixed(1)}개월</b></div>
+       <div class="${months >= 6 ? 'ok' : months >= 3 ? 'warn' : 'bad'}">${months >= 6 ? '✅ 6개월 이상, 여유가 있어요.' : months >= 3 ? '💡 3~6개월 치예요. 조금 더 모아두면 좋아요.' : '⚠️ 3개월 치가 안 돼요. 비상 상황에 취약해요.'}</div>`;
+}
+
+function onFieldChange(e){
+  const row = e.target.closest('.loanList');
+  if (row){
+    const arr = row.dataset.person === 'my' ? myLoans : partnerLoans;
+    const idx = +e.target.dataset.idx, field = e.target.dataset.field;
+    arr[idx][field] = (field === 'type' || field === 'method') ? e.target.value : (Number(e.target.value) || 0);
+  }
+  if (e.target.id === 'equityPct') $('equityNum').value = e.target.value;
+  if (e.target.id === 'equityNum') $('equityPct').value = e.target.value;
+  recalc();
+}
+document.addEventListener('input', onFieldChange);
+document.addEventListener('change', onFieldChange);
+
+document.addEventListener('click', e => {
+  if (e.target.classList.contains('addLoan')){
+    const person = e.target.dataset.person;
+    (person === 'my' ? myLoans : partnerLoans).push({ type: LOAN_TYPES[0], amount: 0, rate: 4.0, years: 30, method: 'annuity' });
+    renderLoans(person);
+    recalc();
+  }
+  if (e.target.classList.contains('delLoan')){
+    const person = e.target.closest('.loanList').dataset.person;
+    (person === 'my' ? myLoans : partnerLoans).splice(+e.target.dataset.idx, 1);
+    renderLoans(person);
+    recalc();
+  }
+  if (e.target.id === 'eq5050'){ $('equityPct').value = 50; $('equityNum').value = 50; recalc(); }
+  if (e.target.id === 'eqAuto'){
+    const totalIn = num('myCash') + loanTotal(myLoans) + num('partnerCash') + loanTotal(partnerLoans);
+    const myIn = num('myCash') + loanTotal(myLoans);
+    const v = totalIn > 0 ? Math.round(myIn / totalIn * 100) : 50;
+    $('equityPct').value = v; $('equityNum').value = v;
+    recalc();
+  }
+});
+
+recalc();
+</script>
+</body>
+</html>
